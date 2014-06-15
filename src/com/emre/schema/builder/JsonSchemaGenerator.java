@@ -5,7 +5,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.emre.annotation.JsonOperation;
+import com.emre.annotation.TestNullEmptyAnnotation;
 import com.emre.street.Street;
+import com.emre.test.Person;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -80,7 +83,8 @@ public class JsonSchemaGenerator {
 
 		Map<String, Class<?>[]> folders = new HashMap<String, Class<?>[]>();
 
-		addFolder(folders, "responses", StatusResponse.class, Street.class);
+		addFolder(folders, "responses", StatusResponse.class);
+		addFolder(folders, "jsons", Street.class, JsonOperation.class, TestNullEmptyAnnotation.class, Person.class);
 
 		return folders;
 	}
