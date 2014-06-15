@@ -19,8 +19,6 @@ import com.fasterxml.jackson.databind.jsonschema.JsonSchema;
 /**
  * Json schema generator from POJOs used in web services.
  * 
- * The build file has an ANT target that runs this class.
- * 
  * @author Emre Koca
  */
 @SuppressWarnings("deprecation")
