@@ -6,9 +6,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.emre.annotation.JsonOperation;
-import com.emre.annotation.TestNullEmptyAnnotation;
+import com.emre.annotation.TestNullEmptyAnnotation.Foo;
 import com.emre.street.Street;
 import com.emre.test.Person;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -65,6 +67,7 @@ public class JsonSchemaGenerator {
 	protected static String createJsonSchema(Class<?> clazz, ObjectMapper mapper) {
 
 		try {
+			mapper.setVisibility(PropertyAccessor.FIELD, Visibility.ANY);
 			JsonSchema jsonSchema = mapper.generateJsonSchema(clazz);
 			// For Jackson lib version < 1.9
 			//return mapper.defaultPrettyPrintingWriter().writeValueAsString(jsonSchema);
@@ -84,7 +87,7 @@ public class JsonSchemaGenerator {
 		Map<String, Class<?>[]> folders = new HashMap<String, Class<?>[]>();
 
 		addFolder(folders, "responses", StatusResponse.class);
-		addFolder(folders, "jsons", Street.class, JsonOperation.class, TestNullEmptyAnnotation.class, Person.class);
+		addFolder(folders, "jsons", Street.class, JsonOperation.class, Foo.class, Person.class);
 
 		return folders;
 	}

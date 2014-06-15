@@ -1,0 +1,17 @@
+{
+  "type" : "object",
+  "properties" : {
+    "fieldOne" : {
+      "type" : "string"
+    },
+    "fieldTwo" : {
+      "type" : "string"
+    },
+    "fieldThree" : {
+      "type" : "string"
+    },
+    "fiedlNull" : {
+      "type" : "string"
+    }
+  }
+}
