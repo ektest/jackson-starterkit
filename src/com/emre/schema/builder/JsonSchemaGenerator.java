@@ -67,6 +67,11 @@ public class JsonSchemaGenerator {
 	protected static String createJsonSchema(Class<?> clazz, ObjectMapper mapper) {
 
 		try {
+			/* The default configuration of an ObjectMapper instance is to only access properties 
+			 * that are public fields or have public getters/setters. 
+			 * An alternative to changing the class definition to make a field public or to provide a public getter/setter is 
+			 * to specify (to the underlying VisibilityChecker) a different property visibility rule. 
+			 */
 			mapper.setVisibility(PropertyAccessor.FIELD, Visibility.ANY);
 			JsonSchema jsonSchema = mapper.generateJsonSchema(clazz);
 			// For Jackson lib version < 1.9

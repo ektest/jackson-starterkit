@@ -65,7 +65,7 @@ public class JsonOperation {
 	public static void main(String[] args) {
 		ObjectMapper mapper = new ObjectMapper(); 
 		/*
-		 * As already described, the default configuration of an ObjectMapper instance is to only access properties 
+		 * The default configuration of an ObjectMapper instance is to only access properties 
 		 * that are public fields or have public getters/setters. 
 		 * An alternative to changing the class definition to make a field public or to provide a public getter/setter is 
 		 * to specify (to the underlying VisibilityChecker) a different property visibility rule. 
