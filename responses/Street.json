@@ -1,0 +1,28 @@
+{
+  "type" : "object",
+  "properties" : {
+    "streetSegment" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "highway" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "line" : {
+            "type" : "string"
+          },
+          "wayId" : {
+            "type" : "string"
+          },
+          "Distance" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}
